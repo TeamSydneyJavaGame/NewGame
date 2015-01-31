@@ -27,7 +27,7 @@ public class GameFrame extends JPanel implements ActionListener {
 
 		addKeyListener(new KeyAdapt(teamSub));
 
-		mainTimer = new Timer(10, this);
+		mainTimer = new Timer(20, this);
 		mainTimer.start();
 
 		for (int i = 0, z = 0; i < targetCount; i++, z += 130) {

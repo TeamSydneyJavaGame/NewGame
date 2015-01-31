@@ -15,6 +15,8 @@ public class TeamSub extends Elements {
 	public void update() {
 		x += velX;
 		y += velY;
+		
+		
 	}
 
 	public void draw(Graphics2D g2d) {

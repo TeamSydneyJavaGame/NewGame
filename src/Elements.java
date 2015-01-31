@@ -4,6 +4,7 @@ public class Elements {
 	int x;
 	int y;
 
+	
 	public Elements(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -11,6 +12,8 @@ public class Elements {
 	}
 	
 	public void update() {
+		
+		
 		
 	}
 	
