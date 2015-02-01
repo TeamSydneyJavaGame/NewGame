@@ -21,7 +21,11 @@ public class Missle extends Elements {
 	}
 
 	public void draw(Graphics2D g2d) {
+
 		g2d.drawImage(getMissleImage(), x + 70, y + 40, null);
+
+		g2d.drawImage(getMissleImage(), x+10, y+20, null);
+
 	}
 
 	public Image getMissleImage() {

@@ -19,6 +19,10 @@ public class Target extends Elements {
 
 		x += velX;
 		y += velY;
+
+//		if (y > 600) {
+//			y = 0;
+//		}
 	}
 
 	public void draw(Graphics2D g2d) {

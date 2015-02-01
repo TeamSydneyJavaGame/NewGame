@@ -15,30 +15,33 @@ public class TeamSub extends Elements {
 	public void update() {
 		x += velX;
 		y += velY;
+		
+//		if (y > 600) {
+//			y = 520;
+//		}
 	}
 
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(getTeamSubImage(), x, y, null);
-	
+
 	}
 
 	public Image getTeamSubImage() {
 
-		ImageIcon ic = new ImageIcon(
-				"TeamSub.png");
+		ImageIcon ic = new ImageIcon("TeamSub.png");
 		return ic.getImage();
 	}
 
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
-		
+
 		if (key == KeyEvent.VK_A) {
 			velY = -4;
 		} else if (key == KeyEvent.VK_Z) {
 			velY = 4;
-		}else if (key == KeyEvent.VK_SPACE) {
-		GameFrame.addMissle(new Missle(x, y));
-			//velX = 10;
+		} else if (key == KeyEvent.VK_SPACE) {
+			GameFrame.addMissle(new Missle(x, y));
+			// velX = 10;
 		}
 	}
 
