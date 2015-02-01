@@ -13,6 +13,8 @@ public class GameFrame extends JPanel implements ActionListener {
 
 	// Missle missle;
 	TeamSub teamSub;
+	Background background;
+	City city;
 
 	int targetCount = 3;
 	static ArrayList<Target> targets = new ArrayList<Target>();
@@ -22,8 +24,10 @@ public class GameFrame extends JPanel implements ActionListener {
 
 	public GameFrame() {
 		setFocusable(true);
-
+		background = new Background(800, 600);
 		teamSub = new TeamSub(20, 200);
+		city = new City(0,0);
+		
 
 		addKeyListener(new KeyAdapt(teamSub));
 
@@ -39,8 +43,9 @@ public class GameFrame extends JPanel implements ActionListener {
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
-
+        background.draw(g2d);
 		teamSub.draw(g2d);
+		city.draw(g2d);
 
 		for (int i = 0; i < targets.size(); i++) {
 			targets.get(i).draw(g2d);
