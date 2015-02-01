@@ -23,15 +23,15 @@ public class GameFrame extends JPanel implements ActionListener {
 	public GameFrame() {
 		setFocusable(true);
 
-		teamSub = new TeamSub(0, 200);
+		teamSub = new TeamSub(20, 200);
 
 		addKeyListener(new KeyAdapt(teamSub));
 
 		mainTimer = new Timer(10, this);
 		mainTimer.start();
 
-		for (int i = 0, z = 0; i < targetCount; i++, z += 130) {
-			addTarget(new Target(random.nextInt(2) + 410 + z,
+		for (int i = 0, z = 0; i < targetCount; i++, z += 80) {
+			addTarget(new Target(random.nextInt(2) + 560 + z,
 								 random.nextInt(50) + 1));
 		}
 	}

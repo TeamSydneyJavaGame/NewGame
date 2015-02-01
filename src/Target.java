@@ -27,7 +27,7 @@ public class Target extends Elements {
 
 	public Image getTargetImage() {
 
-		ImageIcon ic = new ImageIcon("Subbb.png");
+		ImageIcon ic = new ImageIcon("subFinal.png");
 		return ic.getImage();
 	}
 

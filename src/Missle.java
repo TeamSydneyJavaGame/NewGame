@@ -16,29 +16,36 @@ public class Missle extends Elements {
 
 	public void update() {
 		x += velX;
-		
+
 		checkForCollisions();
 	}
 
 	public void draw(Graphics2D g2d) {
-		g2d.drawImage(getMissleImage(), x+20, y+20, null);
+		g2d.drawImage(getMissleImage(), x + 70, y + 40, null);
 	}
 
 	public Image getMissleImage() {
 
-		ImageIcon ic = new ImageIcon("misss.png");
+		ImageIcon ic = new ImageIcon("Torped.png");
 		return ic.getImage();
 	}
 
 	public void checkForCollisions() {
 		ArrayList<Target> targets = GameFrame.getTargetsList();
+		ArrayList<Missle> missles = GameFrame.getMisslesList();
 		for (int i = 0; i < targets.size(); i++) {
 			Target currentTarget = targets.get(i);
-			if (getBounds().intersects(currentTarget.getBounds())) {
-				// BOOM
-				GameFrame.removeTarget(currentTarget);
+
+			for (int j = 0; j < missles.size(); j++) {
+				Missle currentMissle = missles.get(j);
+				if (getBounds().intersects(currentTarget.getBounds())) {
+					// BOOM
+					GameFrame.removeTarget(currentTarget);
+					GameFrame.removeMissle(currentMissle);
+				}
 			}
 		}
+
 	}
 
 	public Rectangle getBounds() {
@@ -48,26 +55,25 @@ public class Missle extends Elements {
 
 }
 
-
-//public void keyPressed(KeyEvent e) {
-//int key = e.getKeyCode();
-//if (key == KeyEvent.VK_SPACE) {
-//	velX = 10;
-//} else if (key == KeyEvent.VK_A) {
-//	velY = -4;
-//} else if (key == KeyEvent.VK_Z) {
-//	velY = 4;
-//}
+// public void keyPressed(KeyEvent e) {
+// int key = e.getKeyCode();
+// if (key == KeyEvent.VK_SPACE) {
+// velX = 10;
+// } else if (key == KeyEvent.VK_A) {
+// velY = -4;
+// } else if (key == KeyEvent.VK_Z) {
+// velY = 4;
+// }
 //
-//}
+// }
 //
-//public void keyReleased(KeyEvent e) {
-//int key = e.getKeyCode();
-//if (key == KeyEvent.VK_SPACE) {
-//	velX = 10;
-//} else if (key == KeyEvent.VK_A) {
-//	velY = 0;
-//} else if (key == KeyEvent.VK_Z) {
-//	velY = 0;
-//}
-//}
+// public void keyReleased(KeyEvent e) {
+// int key = e.getKeyCode();
+// if (key == KeyEvent.VK_SPACE) {
+// velX = 10;
+// } else if (key == KeyEvent.VK_A) {
+// velY = 0;
+// } else if (key == KeyEvent.VK_Z) {
+// velY = 0;
+// }
+// }
