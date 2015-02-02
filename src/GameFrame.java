@@ -19,6 +19,7 @@ public class GameFrame extends JPanel implements ActionListener {
 	int targetCount = 3;
 	static ArrayList<Target> targets = new ArrayList<Target>();
 	static ArrayList<Missle> missles = new ArrayList<Missle>();
+	//static ArrayList<City> theCity = new ArrayList<City>();
 
 	Random random = new Random();
 
@@ -59,6 +60,7 @@ public class GameFrame extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		teamSub.update();
+		city.update();
 
 		for (int i = 0; i < targets.size(); i++) {
 			targets.get(i).update();
